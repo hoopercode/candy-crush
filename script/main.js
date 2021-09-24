@@ -3,15 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let score = 0;
 const grid = document.querySelector(".grid");
+const scoreTrack = document.querySelector(".score")
 const width = 8;
 const squares = []
 const candyColors = [
-  "red",
-  "yellow",
-  "orange",
-  "purple",
-  "green",
-  "blue"
+  "#241E4E",
+  "#960200",
+  "#CE6C47",
+  "#FFD046",
+  "#EADAA2",
+  "#008f96"
 
 ]
 
@@ -79,5 +80,129 @@ function dragDrop () {
 
 function dragEnd () {
   
+//what is a valid move? //Think of this as a big cross with -1 and +1 going left and right and the -width and +width being up and down a row.
+let validMoves = [
+  squareIdBeingDragged -1,
+  squareIdBeingDragged -width,
+  squareIdBeingDragged +1,
+  squareIdBeingDragged +width
+]
+
+let validMove = validMoves.includes(squareIdBeingReplaced) //Look into this, not sure!
+
+if (squareIdBeingReplaced && validMove) {
+  squareIdBeingReplaced = null;
+} else if (squareIdBeingReplaced && !validMove) {
+  squares[squareIdBeingReplaced].style.backgroundColor = colorBeingReplaced
+  squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged
+} else squares[squareIdBeingDragged].style.backgroundColor = colorBeingdragged
 }
+//How to get candies down
+
+function moveDown() {
+  for (i=0; i < 56; i++) {
+   if(squares[i+width].style.backgroundColor === "") {//if row below is blank
+     squares[i+width].style.backgroundColor = squares[i].style.backgroundColor;//change background color of i+width to whatever color i was
+     squares[i].style.backgroundColor = "";//change background color of i to blank to finish off the fall down
+   } 
+  }
+}
+//Checking for Matches
+//check for row of Three
+
+function checkRowForThree () {
+for (i =0; i <= 61; i++) {
+  let rowOfThree = [i, i+1, i+2];
+  let decidedColor = squares[i].style.backgroundColor;
+  const isBlank = squares[i].style.backgroundColor === "";
+  const notValid = [6, 7, 14, 15, 22, 23, 30, 31, 38 ,39, 46, 47, 54, 55];
+
+  if (notValid.includes(i)) continue //learn about continue function
+
+  if (rowOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+    score += 3
+    scoreTrack.innerHTML=score;
+    rowOfThree.forEach(index => {
+      squares[index].style.backgroundColor = ""
+    })
+  }
+
+}
+
+}
+checkRowForThree()
+
+//Check for Column of Three
+function checkColumnForThree () {
+for (i =0; i <= 47; i++) {
+  let columnOfThree = [i, i+width, i+(width*2)]
+  let decidedColor = squares[i].style.backgroundColor
+  const isBlank = squares[i].style.backgroundColor === ""
+
+  if (columnOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+    score += 3
+    scoreTrack.innerHTML=score;
+    columnOfThree.forEach(index => {
+      squares[index].style.backgroundColor = "";
+    })
+  }
+
+}
+
+}
+checkColumnForThree()
+
+//check for row of Four
+
+function checkRowForFour () {
+for (i =0; i <= 61; i++) {
+  let rowOfFour = [i, i+1, i+2, i+3];
+  let decidedColor = squares[i].style.backgroundColor;
+  const isBlank = squares[i].style.backgroundColor === "";
+  const notValid = [5, 6, 7, 13, 14, 15, 21, 22, 23, 29, 30, 31, 37, 38 ,39, 45, 46, 47, 53, 54, 55];
+
+  if (notValid.includes(i)) continue //learn about continue function
+
+  if (rowOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+    score += 4
+    scoreTrack.innerHTML=score;
+    rowOfFour.forEach(index => {
+      squares[index].style.backgroundColor = "";
+    })
+  }
+
+}
+
+}
+checkRowForFour()
+
+//Check for Column of Four
+function checkColumnForFour () {
+for (i =0; i < 39; i++) {
+  let columnOfFour = [i, i+width, i+(width*2), i+(width*3)]
+  let decidedColor = squares[i].style.backgroundColor
+  const isBlank = squares[i].style.backgroundColor === ""
+
+  if (columnOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+    score += 4
+    scoreTrack.innerHTML=score;
+    columnOfFour.forEach(index => {
+      squares[index].style.backgroundColor = "";
+      console.log(index.backgroundColor)
+
+    })
+  }
+
+}
+
+}
+checkColumnForFour()
+
+window.setInterval(function() {
+moveDown() 
+checkColumnForFour()
+checkRowForFour()
+checkColumnForThree()
+checkRowForThree()
+},100)
 })
