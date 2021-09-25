@@ -4,13 +4,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candy Crush Project</title>
+  <title>Knockout Dice Game!</title>
   <link rel="stylesheet" href="main.css">
-  <script src="./script/main.js"></script>
 </head>
-<body>
-  <div class="grid"></div>
-  <h1 class="scoreHeader">Your Score is</h1>
-  <h2 class="score"></h2>
+  <body class="landingBody">
+    <div class="outer-wrapper">
+      <div class="wrapper">
+        <div class="slide one">
+          <div class="playerInput">
+            <div class="playerInput__heading">
+              <img class="landingHeading" src="./assets/heading.png" alt=""></div>
+            <div class="playerInput__player-one-input">
+              <h1 class="playerInput__player-heading">Player One</h1>
+              <input class ="playerInput__field" placeholder="Insert Name Here" type="text">
+            </div>
+            <div class="playerInput__player-two-input">
+              <h1 class="playerInput__player-heading" >Player Two</h1>
+              <input class ="playerInput__field" placeholder="Insert Name Here" type="text">
+            </div>
+            <div class="playerInput__enter">
+              <a href="#landingTwo" class="playerInput__enter-button">Enter Game</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide two" id="landingTwo">
+          <div class="playerRules">
+            <div class="heading">
+              <img class="playerRules__heading"src="./assets/rulesKnockout.png" alt="">
+            </div>
+            <div class="rules">
+              <h3>The aim of the game is the be the first player to get all 11 possible rolls! One person is in charge of clicking!</h3>
+            </div>
+            <div class="startGame">
+              <a href="./diceGame.html" class="playerEnterButton">Play Dice Game</a>
+              <a href="./candyGame.html" class="playerEnterButton">Play Candy Game</a>
+            </div>
+            <div class="Restart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="./script/main.js"></script>
 </body>
 </html>

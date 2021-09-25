@@ -1,0 +1,47 @@
+.playerRules__heading {
+  width: auto;
+  height: 200px;
+}
+
+
+.playerRules {
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.7fr 1fr 1.6fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 1 / 1 / 2 / 8;
+}
+
+.rules { 
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  grid-area: 3 / 1 / 6 / 8; 
+
+}
+
+.rules h3 {
+  width: 800px;
+  font-size: 30px;
+  color: #32a288;
+}
+
+.startGame {
+  grid-area: 4 / 2 / 6 / 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.restart { grid-area: 6 / 1 / 7 / 2; }

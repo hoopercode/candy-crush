@@ -46,7 +46,7 @@ squares.forEach(square => square.addEventListener("dragenter", dragEnter))
 squares.forEach(square => square.addEventListener("dragleave", dragLeave))
 squares.forEach(square => square.addEventListener("drop", dragDrop))
 
-const dragStart = () => {
+function dragStart () {
   colorBeingDragged = this.style.backgroundColor
   squareIdBeingDragged = parseInt(this.id)
 
