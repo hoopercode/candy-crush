@@ -1,6 +1,4 @@
-# 
-## The second largest heading
-###### The smallest heading
+
 
 
 # Candy Crush - A Javascript Game by Rob Hooper
