@@ -10,6 +10,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+    #44CF6C,
+    #32A287
+  )0 100% no-repeat;
+  background-size: 100% 25%;
 }
 
 .diceGame {
@@ -104,7 +110,9 @@
       size: 24px
     };
   }
-  .diceGame__scoreDetailsPlayerOne { 
+  .diceGame__scoreDetailsPlayerOne {
+    height: 250px;
+    width: auto; 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

@@ -1,8 +1,10 @@
-@import "./SCSS/layout/gridLanding.scss";
-@import "./SCSS/layout/candyGrid.scss";
+@import "./SCSS/base/abstracts.scss";
 @import "./SCSS/components/buttons.scss";
-@import "./SCSS/pages/landing.scss";
-@import "./SCSS/layout/gridLandingTwo.scss";
 @import "./SCSS/components/checklist.scss";
 @import "./SCSS/components/dice.scss";
+@import "./SCSS/layout/candyGrid.scss";
+@import "./SCSS/layout/gridLanding.scss";
+@import "./SCSS/layout/gridLandingTwo.scss";
 @import "./SCSS/pages/diceGame.scss";
+@import "./SCSS/pages/home.scss";
+

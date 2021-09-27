@@ -23,13 +23,13 @@ input[type="checkbox"] {
 	margin: 20px;
 }
 
-p {
+.item__key {
 	margin: 0;
-	padding: 20px;
+	padding: 5px;
 	transition: background 0.2s;
 	flex: 1;
 	font-family: 'helvetica neue';
-	font-size: 25px;
+	font-size: 15px;
 	font-weight: 200;
 }
 

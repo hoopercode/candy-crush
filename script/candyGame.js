@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
 
 
-let score = 0;
+const candyReset = document.querySelector(".candy__reset");
 const grid = document.querySelector(".grid");
 const scoreTrack = document.querySelector(".score")
 const width = 8;
@@ -15,6 +16,12 @@ const candyColors = [
   "#008f96"
 
 ]
+let score = 0;
+  scoreTrack.style.display = "none"
+setTimeout(function(){
+  scoreTrack.style.display = "block"
+  scoreTrack.innerHTML = 0
+}, 1000);
 
 //Creating the Board
 function createBoard() {
@@ -31,7 +38,25 @@ function createBoard() {
 }
 createBoard()
 
-
+function clearBoard() {
+  grid.innerHTML = "";
+  for (let i = 0;  i < width*width; i++) {
+    const square = document.createElement('div'); //Talk about this
+    square.setAttribute('draggable', true) //Talk about this
+    square.setAttribute("id", i)
+    let randomColor = Math.floor(Math.random()* candyColors.length)
+    square.style.background = candyColors[randomColor]
+    grid.appendChild(square) //Talk about this
+    squares.push(square);
+    squares.forEach(square => square.addEventListener("dragstart", dragStart))
+squares.forEach(square => square.addEventListener("dragend", dragEnd))
+squares.forEach(square => square.addEventListener("dragover", dragOver))
+squares.forEach(square => square.addEventListener("dragenter", dragEnter))
+squares.forEach(square => square.addEventListener("dragleave", dragLeave))
+squares.forEach(square => square.addEventListener("drop", dragDrop))  
+  }
+  
+}
 
 //Drag the candies
 let colorBeingDragged
@@ -48,7 +73,7 @@ squares.forEach(square => square.addEventListener("drop", dragDrop))
 
 function dragStart () {
   colorBeingDragged = this.style.backgroundColor
-  squareIdBeingDragged = parseInt(this.id)
+  squareIdBeingDragged = parseInt(this.id)//takes the ID of whatever is being parsed into this function. e.g. (id: 01)
 
 
 }
@@ -70,10 +95,10 @@ function dragLeave () {
 
 
 function dragDrop () {
-  colorBeingReplaced = this.style.backgroundColor
-  squareIdBeingReplaced = parseInt(this.id)
-  this.style.backgroundColor = colorBeingDragged
-  squares[squareIdBeingDragged].style.backgroundColor = colorBeingReplaced
+  colorBeingReplaced = this.style.backgroundColor//color of square that is being replaced
+  squareIdBeingReplaced = parseInt(this.id)//id of square being replaced
+  this.style.backgroundColor = colorBeingDragged // changes color of destination background to that of the one being dragged
+  squares[squareIdBeingDragged].style.backgroundColor = colorBeingReplaced //changes the background color of the square being dragged to that of the one dragged on top of it
   
 
 }
@@ -88,19 +113,21 @@ let validMoves = [
   squareIdBeingDragged +width
 ]
 
-let validMove = validMoves.includes(squareIdBeingReplaced) //Look into this, not sure!
+let validMove = validMoves.includes(squareIdBeingReplaced) //This looks at the above in terms of numbers e.g. if the square had an ID of 6, does that number match up with the above rules?
 
 if (squareIdBeingReplaced && validMove) {
-  squareIdBeingReplaced = null;
+  squareIdBeingReplaced = null;//Giving the square an ID of null?
+
 } else if (squareIdBeingReplaced && !validMove) {
   squares[squareIdBeingReplaced].style.backgroundColor = colorBeingReplaced
-  squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged
+  squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged;
+
 } else squares[squareIdBeingDragged].style.backgroundColor = colorBeingdragged
 }
 //How to get candies down
 
 function moveDown() {
-  for (i=0; i < 56; i++) {
+  for (i=0; i < 56; i++) {//56 because of the one row less than 64
    if(squares[i+width].style.backgroundColor === "") {//if row below is blank
      squares[i+width].style.backgroundColor = squares[i].style.backgroundColor;//change background color of i+width to whatever color i was
      squares[i].style.backgroundColor = "";//change background color of i to blank to finish off the fall down
@@ -188,13 +215,12 @@ for (i =0; i < 39; i++) {
     scoreTrack.innerHTML=score;
     columnOfFour.forEach(index => {
       squares[index].style.backgroundColor = "";
-      console.log(index.backgroundColor)
 
     })
   }
 
 }
-
+// candyReset.addEventListener("click", clearBoard)
 }
 checkColumnForFour()
 
@@ -205,4 +231,8 @@ checkRowForFour()
 checkColumnForThree()
 checkRowForThree()
 },100)
+
+
 })
+
+
