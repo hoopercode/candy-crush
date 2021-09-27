@@ -123,6 +123,4 @@ const rollPlayerOne = () => {
   );
   
 }
-// playerOneShakeButton.addEventListener("click", () => roll());
-// playerTwoShakeButton.addEventListener("click", () => roll());
 

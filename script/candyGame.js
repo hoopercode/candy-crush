@@ -1,7 +1,7 @@
 const candyReset = document.querySelector(".candy__reset");
 const grid = document.querySelector(".grid");
 const scoreTrack = document.querySelector(".score")
-const width = 8;
+const width = 8;//To use later on to make things easier to understand
 const squares = []
 const candyColors = [
   "#241E4E",
@@ -14,7 +14,7 @@ const candyColors = [
 ]
 let score = 0;
   scoreTrack.style.display = "none"
-setTimeout(function(){
+setTimeout(function(){ //Have to delay due to game lagging setting up
   scoreTrack.style.display = "block"
   scoreTrack.innerHTML = 0
 }, 1000);
@@ -114,17 +114,17 @@ function moveDown() {
 
 function checkRowForThree () {
 for (let i =0; i <= 61; i++) {
-  let rowOfThree = [i, i+1, i+2];
-  let decidedColor = squares[i].style.backgroundColor;
+  let rowThree = [i, i+1, i+2];
+  let matchedColor = squares[i].style.backgroundColor;
   const isBlank = squares[i].style.backgroundColor === "";
   const notValid = [6, 7, 14, 15, 22, 23, 30, 31, 38 ,39, 46, 47, 54, 55];
 
-  if (notValid.includes(i)) continue //learn about continue function
+  if (notValid.includes(i)) continue //like a break but it gets me out of the loop JUST in this iteration
 
-  if (rowOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+  if (rowThree.every(index => squares[index].style.backgroundColor === matchedColor && !isBlank)) {
     score += 3
     scoreTrack.innerHTML=score;
-    rowOfThree.forEach(index => {
+    rowThree.forEach(index => {
       squares[index].style.backgroundColor = ""
     })
   }
@@ -137,14 +137,14 @@ checkRowForThree()
 //Check for Column of Three
 function checkColumnForThree () {
 for (let i =0; i <= 47; i++) {
-  let columnOfThree = [i, i+width, i+(width*2)]
-  let decidedColor = squares[i].style.backgroundColor
+  let columnThree = [i, i+width, i+(width*2)]
+  let matchedColor = squares[i].style.backgroundColor
   const isBlank = squares[i].style.backgroundColor === ""
 
-  if (columnOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+  if (columnThree.every(index => squares[index].style.backgroundColor === matchedColor && !isBlank)) {
     score += 3
     scoreTrack.innerHTML=score;
-    columnOfThree.forEach(index => {
+    columnThree.forEach(index => {
       squares[index].style.backgroundColor = "";
     })
   }
@@ -158,17 +158,17 @@ checkColumnForThree()
 
 function checkRowForFour () {
 for (let i =0; i <= 61; i++) {
-  let rowOfFour = [i, i+1, i+2, i+3];
-  let decidedColor = squares[i].style.backgroundColor;
+  let rowFour = [i, i+1, i+2, i+3];
+  let matchedColor = squares[i].style.backgroundColor;
   const isBlank = squares[i].style.backgroundColor === "";
   const notValid = [5, 6, 7, 13, 14, 15, 21, 22, 23, 29, 30, 31, 37, 38 ,39, 45, 46, 47, 53, 54, 55];
 
   if (notValid.includes(i)) continue //learn about continue function
 
-  if (rowOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+  if (rowFour.every(index => squares[index].style.backgroundColor === matchedColor && !isBlank)) {
     score += 4
     scoreTrack.innerHTML=score;
-    rowOfFour.forEach(index => {
+    rowFour.forEach(index => {
       squares[index].style.backgroundColor = "";
     })
   }
@@ -181,14 +181,14 @@ checkRowForFour()
 //Check for Column of Four
 function checkColumnForFour () {
 for (let i =0; i < 39; i++) {
-  let columnOfFour = [i, i+width, i+(width*2), i+(width*3)]
-  let decidedColor = squares[i].style.backgroundColor
+  let columnFour = [i, i+width, i+(width*2), i+(width*3)]
+  let matchedColor = squares[i].style.backgroundColor
   const isBlank = squares[i].style.backgroundColor === ""
 
-  if (columnOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+  if (columnFour.every(index => squares[index].style.backgroundColor === matchedColor && !isBlank)) {
     score += 4
     scoreTrack.innerHTML=score;
-    columnOfFour.forEach(index => {
+    columnFour.forEach(index => {
       squares[index].style.backgroundColor = "";
 
     })
