@@ -1,6 +1,6 @@
 ![alt text](https://github.com/hoopercode/candy-crush/blob/main/assets/candyGrid.png?raw=true)
 
-# Candy Crush - A Javascript Game by Rob Hooper
+# Candy Crush - A Javascript Game by Rob Hooper 
 
 ## Project Brief
 
