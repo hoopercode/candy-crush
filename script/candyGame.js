@@ -35,27 +35,27 @@ function createBoard() {
 createBoard()
 
 //Drag the candies
-let colorBeingDragged
-let colorBeingReplaced
-let squareIdBeingDragged
-let squareIdBeingReplaced
+let homeColor
+let destinationColor
+let homeId
+let destinationId
 
+//"dragging event listeners "
 squares.forEach(square => square.addEventListener("dragstart", dragStart))
 squares.forEach(square => square.addEventListener("dragend", dragEnd))
 squares.forEach(square => square.addEventListener("dragover", dragOver))
 squares.forEach(square => square.addEventListener("dragenter", dragEnter))
-squares.forEach(square => square.addEventListener("dragleave", dragLeave))
 squares.forEach(square => square.addEventListener("drop", dragDrop))
 
 function dragStart () {
-  colorBeingDragged = this.style.backgroundColor
-  squareIdBeingDragged = parseInt(this.id)//takes the ID of whatever is being parsed into this function. e.g. (id: 01)
+  homeColor = this.style.backgroundColor
+  homeId = parseInt(this.id)//takes the ID of whatever is being parsed into this function. e.g. (id: 01)
 
 
 }
 
 function dragOver (e) {
-  e.preventDefault()
+  e.preventDefault()//allows something to be dragged over
   
 }
 
@@ -65,17 +65,14 @@ function dragEnter (e) {
   
 }
 
-function dragLeave () {
-  
-}
 
 
+function dragDrop () {//This function applies to whatever is being landed on.  'this' relates to the item being landed on.  It gives us a chance to steal the color and ID of that square so we can swap them out.
 
-function dragDrop () {
-  colorBeingReplaced = this.style.backgroundColor//color of square that is being replaced
-  squareIdBeingReplaced = parseInt(this.id)//id of square being replaced
-  this.style.backgroundColor = colorBeingDragged // changes color of destination background to that of the one being dragged
-  squares[squareIdBeingDragged].style.backgroundColor = colorBeingReplaced //changes the background color of the square being dragged to that of the one dragged on top of it
+  destinationColor = this.style.backgroundColor//color of square that is being replaced
+  destinationId = parseInt(this.id)//id of square being replaced
+  this.style.backgroundColor = homeColor // changes color of destinationination background to that of the one being dragged
+  squares[homeId].style.backgroundColor = destinationColor //changes the background color of the square being dragged to that of the one dragged on top of it
   
 
 }
@@ -84,22 +81,23 @@ function dragEnd () {
   
 //what is a valid move? //Think of this as a big cross with -1 and +1 going left and right and the -width and +width being up and down a row.
 let validMoves = [
-  squareIdBeingDragged -1,
-  squareIdBeingDragged -width,
-  squareIdBeingDragged +1,
-  squareIdBeingDragged +width
+  homeId -1,
+  homeId -width,
+  homeId +1,
+  homeId +width
 ]
 
-let validMove = validMoves.includes(squareIdBeingReplaced) //This looks at the above in terms of numbers e.g. if the square had an ID of 6, does that number match up with the above rules?
+let validMove = validMoves.includes(destinationId) //This looks at the above in terms of numbers e.g. if the square had an ID of 6, does that number match up with the above rules?
 
-if (squareIdBeingReplaced && validMove) {
-  squareIdBeingReplaced = null;//Giving the square an ID of null?
+if (destinationId && validMove) {
+  destinationId = null;//Giving the square an ID of null.  Resetting that value for a fresh start because that ID is no longer associated to that square.
 
-} else if (squareIdBeingReplaced && !validMove) {
-  squares[squareIdBeingReplaced].style.backgroundColor = colorBeingReplaced
-  squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged;
+} else if (destinationId && !validMove) {
+  squares[destinationId].style.backgroundColor = destinationColor
+  squares[homeId].style.backgroundColor = homeColor;
+  //assigning colors back to the squares because not a valid move.
 
-} else squares[squareIdBeingDragged].style.backgroundColor = colorBeingdragged;
+} else squares[homeId].style.backgroundColor = homeColor;//square is somewhere random so just give it back its original color
 }
 //How to get candies down
 
