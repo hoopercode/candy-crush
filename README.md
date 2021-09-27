@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-# 
-## The second largest heading
-###### The smallest heading
-=======
-
->>>>>>> 690336194d2fcc794ef8acb0707fec129296f8c7
-
+![alt text](https://github.com/hoopercode/candy-crush/blob/main/assets/candyGrid.png?raw=true)
 
 # Candy Crush - A Javascript Game by Rob Hooper
 
