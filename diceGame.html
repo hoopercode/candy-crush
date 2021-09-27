@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knockout Dice Game!</title>
+  <link rel="stylesheet" href="main.css">
+  
+</head>
+<body class="gameBody">
+ 
+
+  <div class="diceGame">
+    <div class="diceGame__headerPlayerOne">
+      <h1 class="playerOneName">Player One</h1>
+    </div>
+    <div class="diceGame__headerPlayerTwo">
+      <h1 class="playerTwoName">Player Two</h1>
+    </div>
+    <div class="diceGame__score-header-one">
+      <h2>Only --- many to go!</h2>
+    </div>
+    <div id="diceGame__score-header-two"">
+    </div>
+    <div class="diceGame__scoreDetailsPlayerOne">
+        <div class="inbox">
+            <div class="item">
+              <input type="checkbox" class="playerOneChecks" id="cb02">
+              <p class="item__key">Roll Total 2</p>
+            </div>
+            <div class="item">
+              <input type="checkbox" class="playerOneChecks" id="cb03">
+              <p class="item__key">Roll Total 3</p>
+            </div>
+            <div class="item">
+              <input type="checkbox" class="playerOneChecks" id="cb04">
+              <p class="item__key">Roll Total 4</p>
+            </div>
+            <div class="item">
+              <input type="checkbox" class="playerOneChecks" id="cb05">
+              <p class="item__key">Roll Total 5</p>
+            </div>
+            <div class="item">
+              <input type="checkbox" class="playerOneChecks" id="cb06">
+              <p class="item__key">Roll Total 6</p>
+            </div>
+            <div class="item">
+              <input type="checkbox" class="playerOneChecks" id="cb07">
+              <p class="item__key">Roll Total 7</p>
+            </div>
+          </div>
+          <div class="inbox">
+              <div class="item">
+                <input type="checkbox" class="playerOneChecks" id="cb08">
+                <p class="item__key">Roll Total 8</p>
+              </div>
+              <div class="item">
+                <input type="checkbox" class="playerOneChecks" id="cb09">
+                <p class="item__key">Roll Total 9</p>
+              </div>
+              <div class="item">
+                <input type="checkbox" class="playerOneChecks" id="cb10">
+                <p class="item__key">Roll Total 10</p>
+              </div>
+              <div class="item">
+                <input type="checkbox" class="playerOneChecks" id="cb11">
+                <p class="item__key">Roll Total 11</p>
+              </div>
+              <div class="item">
+                <input type="checkbox" class="playerOneChecks" id="cb12">
+                <p class="item__key">Roll Total 12</p>
+              </div>
+      </div>
+    </div>
+    <div class="diceGame__scoreDetailsPlayerTwo">
+      <div class="inbox">
+        <div class="item">
+          <input type="checkbox" class="playerTwoChecks">
+          <p class="item__key">Roll Total 2</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" class="playerTwoChecks">
+          <p class="item__key">Roll Total 3</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" class="playerTwoChecks">
+          <p class="item__key">Roll Total 4</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" class="playerTwoChecks">
+          <p class="item__key">Roll Total 5</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" class="playerTwoChecks">
+          <p class="item__key">Roll Total 6</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" class="playerTwoChecks">
+          <p class="item__key">Roll Total 7</p>
+        </div>
+      </div>
+      <div class="inbox">
+          
+          <div class="item">
+            <input type="checkbox" class="playerTwoChecks">
+            <p class="item__key">Roll Total 8</p>
+          </div>
+          <div class="item">
+            <input type="checkbox" class="playerTwoChecks">
+            <p class="item__key">Roll Total 9</p>
+          </div>
+          <div class="item">
+            <input type="checkbox" class="playerTwoChecks">
+            <p class="item__key">Roll Total 10</p>
+          </div>
+          <div class="item">
+            <input type="checkbox" class="playerTwoChecks">
+            <p class="item__key">Roll Total 11</p>
+          </div>
+          <div class="item">
+            <input type="checkbox" class="playerTwoChecks">
+            <p class="item__key">Roll Total 12</p>
+          </div>
+  </div>
+    </div>
+    <div class="div5">
+      <div class="dicePlayTwo">
+        <h3>Player Two Screen</h3>
+        <div class="dice-wrapper">
+          <img src="./assets/dice-01.svg" id="die-4">
+          <img src="./assets/dice-02.svg" id="die-3">
+        </div>
+        <p id="playTwoTotal">Insert Text Here</p>
+      </div>
+    </div>
+    <div class="div6">
+      <div class="dicePlayOne">
+        <h3>Player One Screen</h3>
+        <div class="dice-wrapper">
+          <img src="./assets/dice-01.svg" id="die-1">
+          <img src="./assets/dice-02.svg" id="die-2">
+        </div>
+        <p id="playOneTotal">This is the next dice roller</p>
+      </div>
+    </div>
+    <div class="diceGame__roll-button">
+      <button id="shakePlayerOne">Roll the Dice</button>
+    </div>
+  <script src="./script/diceGame.js"></script>
+</body>
+</html>

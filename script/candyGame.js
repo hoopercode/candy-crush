@@ -1,7 +1,3 @@
-const refresh = document.addEventListener('DOMContentLoaded', () => {
-  
-
-
 const candyReset = document.querySelector(".candy__reset");
 const grid = document.querySelector(".grid");
 const scoreTrack = document.querySelector(".score")
@@ -38,26 +34,8 @@ function createBoard() {
 }
 createBoard()
 
-function clearBoard() {
-  grid.innerHTML = "";
-  for (let i = 0;  i < width*width; i++) {
-    const square = document.createElement('div'); //Talk about this
-    square.setAttribute('draggable', true) //Talk about this
-    square.setAttribute("id", i)
-    let randomColor = Math.floor(Math.random()* candyColors.length)
-    square.style.background = candyColors[randomColor]
-    grid.appendChild(square) //Talk about this
-    squares.push(square);
-    squares.forEach(square => square.addEventListener("dragstart", dragStart))
-squares.forEach(square => square.addEventListener("dragend", dragEnd))
-squares.forEach(square => square.addEventListener("dragover", dragOver))
-squares.forEach(square => square.addEventListener("dragenter", dragEnter))
-squares.forEach(square => square.addEventListener("dragleave", dragLeave))
-squares.forEach(square => square.addEventListener("drop", dragDrop))  
-  }
-  
-}
 
+candyReset.addEventListener("click", createNewBoard)
 //Drag the candies
 let colorBeingDragged
 let colorBeingReplaced
@@ -220,7 +198,6 @@ for (i =0; i < 39; i++) {
   }
 
 }
-// candyReset.addEventListener("click", clearBoard)
 }
 checkColumnForFour()
 
@@ -231,8 +208,5 @@ checkRowForFour()
 checkColumnForThree()
 checkRowForThree()
 },100)
-
-
-})
 
 
