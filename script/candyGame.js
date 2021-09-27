@@ -34,8 +34,6 @@ function createBoard() {
 }
 createBoard()
 
-
-candyReset.addEventListener("click", createNewBoard)
 //Drag the candies
 let colorBeingDragged
 let colorBeingReplaced
