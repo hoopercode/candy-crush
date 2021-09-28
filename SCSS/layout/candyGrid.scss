@@ -1,26 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+@media screen and (max-width: 480px) {
+  .candyBody {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+    // background: linear-gradient(
+    //   #44CF6C,
+    //   #32A287
+    // )0 100% no-repeat;
+    // background-size: 100%;
+  }
+
+  .grid {
+    margin-top: 20px;
+    // margin-left: 20px;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid div {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .scoreContainer {
+    font-family: 'Luckiest Guy', cursive;
+    color: #3C4F76;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: white;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (min-width: 480px) {
+
 .candyBody {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(
-    #44CF6C,
-    #32A287
-  )0 100% no-repeat;
-  background-size: 100%;
+  // background: linear-gradient(
+  //   #44CF6C,
+  //   #32A287
+  // )0 100% no-repeat;
+  // background-size: 100%;
 }
 
 .grid {
   margin-top: 20px;
-  height: 560px;
-  width: 560px;
+  // margin-left: 20px;
+  height:480px;
+  width: 480px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .grid div {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
 }
 
+.scoreContainer {
+  font-family: 'Luckiest Guy', cursive;
+  color: #3C4F76;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: white;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+  .candyBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    // height: 100vh;
+    // background: linear-gradient(
+    //   #44CF6C,
+    //   #32A287
+    // )0 100% no-repeat;
+    // background-size: 100%;
+  }
+  
+  .grid {
+    margin-top: 20px;
+    // margin-left: 20px;
+    height: 480px;
+    width: 480px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid div {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .scoreContainer {
+    font-family: 'Luckiest Guy', cursive;
+    color: #3C4F76;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: white;
+    margin-top: 10px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  }

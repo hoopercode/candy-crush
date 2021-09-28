@@ -1,6 +1,6 @@
 const candyReset = document.querySelector(".candy__reset");
 const grid = document.querySelector(".grid");
-const scoreTrack = document.querySelector(".score")
+const scoreTrack = document.querySelector(".scoreContainer__scoreText")
 const width = 8;//To use later on to make things easier to understand
 const squares = []
 const candyColors = [
@@ -9,7 +9,7 @@ const candyColors = [
   "#CE6C47",
   "#FFD046",
   "#EADAA2",
-  "#008f96"
+  "F5F474"
 
 ]
 let score = 0;
@@ -215,39 +215,39 @@ function clearGameGrid () {
 
 candyReset.addEventListener("click", clearGameGrid)
 
-function gameOver () {
-  const firstColor = []
-  const secondColor = []
-  const thirdColor = []
-  const fourthColor = []
-  const fifthColor = []
-  const sixthColor = []
+// function gameOver () {
+//   const firstColor = []
+//   const secondColor = []
+//   const thirdColor = []
+//   const fourthColor = []
+//   const fifthColor = []
+//   const sixthColor = []
   
 
-  for (let i=0; i < 64; i++) {
-    if (squares[i].style.background =  "#241E4E") {
-     firstColor.push(squares[i])
-    }else if (squares[i].style.background =  "#960200"){
-      secondColor.push(squares[i])
+//   for (let i=0; i < 64; i++) {
+//     if (squares[i].style.background =  "#241E4E") {
+//      firstColor.push(squares[i])
+//     }else if (squares[i].style.background =  "#960200"){
+//       secondColor.push(squares[i])
 
-    }else if (squares[i].style.background =  "#CE6C47") {
-      thirdColor.push(squares[i])
+//     }else if (squares[i].style.background =  "#CE6C47") {
+//       thirdColor.push(squares[i])
 
-    }else if (squares[i].style.background =  "#FFD046") {
-      fourthColor.push(squares[i])
+//     }else if (squares[i].style.background =  "#FFD046") {
+//       fourthColor.push(squares[i])
 
-    }else if (squares[i].style.background =  "#EADAA2") {
-      fifthColor.push(squares[i])
+//     }else if (squares[i].style.background =  "#EADAA2") {
+//       fifthColor.push(squares[i])
 
-    }else if (squares[i].style.background =  "#008f96") {
-      sixthColor.push(squares[i])
+//     }else if (squares[i].style.background =  "#008f96") {
+//       sixthColor.push(squares[i])
 
-    }
+//     }
     
-  }
+//   }
 
   
-}
+// }
 
 
 

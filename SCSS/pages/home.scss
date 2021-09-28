@@ -1,160 +1,70 @@
-@use "../base/abstracts.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+@media screen and (max-width: 480px) {
 
-.landingBody {
+body {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 0.2fr 1.8fr; 
+  gap: 0px 0px; 
+  justify-items: stretch; 
+  align-items: stretch; 
   height: 100vh;
-  background: linear-gradient(
-    #44CF6C,
-    #32A287
-  )0 100% no-repeat;
-  background-size: 100% 25%;
-  text-align: center;
-  display: grid;
-
-
+    background: linear-gradient(
+      #44CF6C,
+      #32A287
+    )0 100% no-repeat;
+    background-size: 100%;
 }
-
-.slide {
-  width: 100vw;
-  height: 100vh;
-}
-
-.outer-wrapper {
-  width: 100vh;
-  height: 100vw;
-  transform: rotate(-90deg) translateX(-100vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-::-webkit-scrollbar {
-  display:none;
-}
-
-
-
-.wrapper {
+.title { 
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  color: #3C4F76;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  font-weight: 1200;
   display: flex;
-  flex-direction: row;
-  width: 200vw;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-}
-.one {
-  background: linear-gradient(
-    #44CF6C,
-    #32A287
-  )0 100% no-repeat;
-  background-size: 100% 25%;
-  height: 100vh;
-}
-.two {
-  height: 100vh;
-  background: linear-gradient(
-    #44CF6C,
-    #32A287
-  )0 100% no-repeat;
-  background-size: 100% 25%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1 / 1 / 2 / 2; }
+
+.candyBody { 
+  grid-area: 2 / 1 / 3 / 2; }
+
 }
 
+@media screen and (min-width: 480px) {
 
-.landingHeading {
-  width: auto;
-  height: 200px;
-  background-color: white;
-}
-
-
-
-$primary: #11998e;
-$secondary: #38ef7d;
-$white: #fff;
-$gray: #9b9b9b;
-
-
-.playerInput__player-one-input .playerInput__player-two-input{
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 50%;
-}
-
-.playerInput__field {
-  color: #32A287;
-  font-family: inherit;
-  width: 50%;
-  border: 0;
-  border-bottom: 4px solid #32A287;
-  outline: 0;
-  font-size: 1.3rem;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-  text-align: center;
-  font-size: 30px;
-
-  &::placeholder {
-    color: #32A287;
-    text-align: center;
+  body {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.2fr 1.8fr; 
+    gap: 0px 0px; 
+    justify-items: stretch; 
+    align-items: stretch; 
+    height: 100vh;
+      background: linear-gradient(
+        #44CF6C,
+        #32A287
+      )0 100% no-repeat;
+      background-size: 100%;
+  }
+  .title { 
+    margin-top: 10px;
+    font-family: 'Luckiest Guy', cursive;
     font-size: 30px;
-
+    color: #3C4F76;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-weight: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: 1 / 1 / 2 / 2; }
+  
+  .candyBody { 
+    grid-area: 2 / 1 / 3 / 2; }
   
   }
-
-  &:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
-  }
-}
-
-.playerInput__label {
-  text-align: center;
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: $gray;
-  
-}
-
-.playerInput__player-heading {
-  color: #32A287;
-};
-
-.playerInput__field:focus {
-  ~ .form__label {
-    text-align: center;
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: $primary;
-    font-weight:700;    
-  }
-  padding-bottom: 6px;  
-  font-weight: 700;
-  border-width: 3px;
-  border-color: #32A287;
-  border-image-slice: 1;
-}
-/* reset input */
-.playerInput__field{
-  &:required,&:invalid { box-shadow:none; }
-}
-/* demo */
-// body {
-//   font-family: 'Poppins', sans-serif; 
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   min-height: 100vh;
-//   font-size: 1.5rem;
-//   background-color:#222222;
-// }

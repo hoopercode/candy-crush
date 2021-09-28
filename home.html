@@ -6,14 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Candy Crush Project</title>
   <link rel="stylesheet" href="main.css">
-  
+ 
 </head>
 <body>
+  <div class="title">
+    <h1>Candy Crush</h1>
+    <h3>By Rob Hooper</h3>
+  </div>
+
 <section class = "candyBody">
   <div class="grid"></div>
-  <h1 class="scoreHeader">Your Score is</h1>
-  <h2 class="score"></h2>
-  <button class="candy__reset">Reset</button>
+  <div class="scoreContainer">
+    <h1 class="scoreContainer__scoreHeader">Your Score is</h1>
+    <h2 class="scoreContainer__scoreText"></h2>
+   
+
+    <button class="candy__reset">Reset</button>
+  </div>
 </section>
 
 <script type="module" src="./script/candyGame.js"></script>
