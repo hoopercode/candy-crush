@@ -3,13 +3,16 @@ const grid = document.querySelector(".grid");
 const scoreTrack = document.querySelector(".scoreContainer__scoreText")
 const width = 8;//To use later on to make things easier to understand
 const squares = []
+
+let navy = "#241E4E";
+let crimson = "#960200";
+let orange = "#CE6C47";
+let yellow = "#FFD046";
+let lightyellow = "#EADAA2";
+let teal = "#008f96";
+
 const candyColors = [
-  "#241E4E",
-  "#960200",
-  "#CE6C47",
-  "#FFD046",
-  "#EADAA2",
-  "F5F474"
+ navy, crimson, orange, yellow, lightyellow,
 
 ]
 let score = 0;
@@ -215,40 +218,6 @@ function clearGameGrid () {
 
 candyReset.addEventListener("click", clearGameGrid)
 
-// function gameOver () {
-//   const firstColor = []
-//   const secondColor = []
-//   const thirdColor = []
-//   const fourthColor = []
-//   const fifthColor = []
-//   const sixthColor = []
-  
-
-//   for (let i=0; i < 64; i++) {
-//     if (squares[i].style.background =  "#241E4E") {
-//      firstColor.push(squares[i])
-//     }else if (squares[i].style.background =  "#960200"){
-//       secondColor.push(squares[i])
-
-//     }else if (squares[i].style.background =  "#CE6C47") {
-//       thirdColor.push(squares[i])
-
-//     }else if (squares[i].style.background =  "#FFD046") {
-//       fourthColor.push(squares[i])
-
-//     }else if (squares[i].style.background =  "#EADAA2") {
-//       fifthColor.push(squares[i])
-
-//     }else if (squares[i].style.background =  "#008f96") {
-//       sixthColor.push(squares[i])
-
-//     }
-    
-//   }
-
-  
-// }
-
 
 
 window.setInterval(function() {
@@ -257,4 +226,5 @@ checkColumnForFour()
 checkRowForFour()
 checkColumnForThree()
 checkRowForThree()
+gameOver ()
 },100)
