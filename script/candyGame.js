@@ -187,10 +187,11 @@ for (let i =0; i < 39; i++) {
   const isBlank = squares[i].style.backgroundColor === ""
 
   if (columnFour.every(index => squares[index].style.backgroundColor === matchedColor && !isBlank)) {
-    score += 4
+    score += 4;
+    console.log(score)
     scoreTrack.innerHTML=score;
     columnFour.forEach(index => {
-      squares[index].style.backgroundColor = "";
+    squares[index].style.backgroundColor = "";
 
     })
   }
@@ -198,6 +199,57 @@ for (let i =0; i < 39; i++) {
 }
 }
 checkColumnForFour()
+
+
+function clearGameGrid () {
+  for (let i=0; i < 64; i++) {
+    let randomColor = Math.floor(Math.random()* candyColors.length)
+    squares[i].style.background = candyColors[randomColor]
+    
+  }
+  setTimeout(function(){ //Have to delay due to game lagging setting up
+    scoreTrack.innerHTML = 0;
+    score = 0;
+  }, 500);
+}
+
+candyReset.addEventListener("click", clearGameGrid)
+
+function gameOver () {
+  const firstColor = []
+  const secondColor = []
+  const thirdColor = []
+  const fourthColor = []
+  const fifthColor = []
+  const sixthColor = []
+  
+
+  for (let i=0; i < 64; i++) {
+    if (squares[i].style.background =  "#241E4E") {
+     firstColor.push(squares[i])
+    }else if (squares[i].style.background =  "#960200"){
+      secondColor.push(squares[i])
+
+    }else if (squares[i].style.background =  "#CE6C47") {
+      thirdColor.push(squares[i])
+
+    }else if (squares[i].style.background =  "#FFD046") {
+      fourthColor.push(squares[i])
+
+    }else if (squares[i].style.background =  "#EADAA2") {
+      fifthColor.push(squares[i])
+
+    }else if (squares[i].style.background =  "#008f96") {
+      sixthColor.push(squares[i])
+
+    }
+    
+  }
+
+  
+}
+
+
 
 window.setInterval(function() {
 moveDown() 
