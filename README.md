@@ -7,6 +7,33 @@
 Put everything you’ve learned in your first 3 weeks to the test by designing and building your own full functioning browser based game using HTML, CSS/SCSS and
 JavaScript.
 
+# My New Learning
+
+const square = document.createElement('div');
+
+- I had never used this syntax before.  It was great for getting the grid made.  Saved a lot of time.  Before appending it to the div I was able to style it.  Very cool use of JS.  Repeated this 64 times.
+
+grid.appendChild(square) //Talk about this
+
+- I had tried to use this quite a lot but had never really had success.  It was so good to use it and have success. Super easy.
+
+square.setAttribute('draggable', true) //Talk about this
+
+- I had never seen this before so thought it was worth mentioning.  This just makes the item draggable or not. When clicked and dragged a little green + sign pops up with the drag.
+
+All the drag functions
+
+- These were all new to me so that took up a lot of my time.  Learning about the different events/functions/defaults that were possible.  Took a while to get my head around the difference between drop and dragEnd (they seemed the same).  Had a big breakthrough when I read “​​A drop event is fired from the drop target, A dragend event is fired from the source of the drag”
+
+window.setInterval(function() 
+
+- This is a cool function that lets tells the window to complete whatever function you’d like at a certain interval.  In my case, I needed the window to constantly look for scoring points in the grid.  I had all my scoring functions inside this function.
+
+setTimeout(function()
+
+- Although we had learned about these earlier in the week, this hadn’t really sunk in so it was good to use.  I had an issue where I was trying to set the score to 0 to start the game but because the game often started with winning combinations, the score would increase without the player actually doing anything.
+
+
 ## Pseudo-Code - Candy Crush
 
 *8x8 Grid that has either colors or symbols*
@@ -80,31 +107,7 @@ No idea how to do this.  Does it get stored locally?
 
 
 
-# My New Learning
 
-const square = document.createElement('div');
-
-- I had never used this syntax before.  It was great for getting the grid made.  Saved a lot of time.  Before appending it to the div I was able to style it.  Very cool use of JS.  Repeated this 64 times.
-
-grid.appendChild(square) //Talk about this
-
-- I had tried to use this quite a lot but had never really had success.  It was so good to use it and have success. Super easy.
-
-square.setAttribute('draggable', true) //Talk about this
-
-- I had never seen this before so thought it was worth mentioning.  This just makes the item draggable or not. When clicked and dragged a little green + sign pops up with the drag.
-
-All the drag functions
-
-- These were all new to me so that took up a lot of my time.  Learning about the different events/functions/defaults that were possible.  Took a while to get my head around the difference between drop and dragEnd (they seemed the same).  Had a big breakthrough when I read “​​A drop event is fired from the drop target, A dragend event is fired from the source of the drag”
-
-window.setInterval(function() 
-
-- This is a cool function that lets tells the window to complete whatever function you’d like at a certain interval.  In my case, I needed the window to constantly look for scoring points in the grid.  I had all my scoring functions inside this function.
-
-setTimeout(function()
-
-- Although we had learned about these earlier in the week, this hadn’t really sunk in so it was good to use.  I had an issue where I was trying to set the score to 0 to start the game but because the game often started with winning combinations, the score would increase without the player actually doing anything.
 
 
 

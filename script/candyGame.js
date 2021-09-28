@@ -208,6 +208,7 @@ function clearGameGrid () {
   for (let i=0; i < 64; i++) {
     let randomColor = Math.floor(Math.random()* candyColors.length)
     squares[i].style.background = candyColors[randomColor]
+
     
   }
   setTimeout(function(){ //Have to delay due to game lagging setting up
@@ -226,5 +227,6 @@ checkColumnForFour()
 checkRowForFour()
 checkColumnForThree()
 checkRowForThree()
-gameOver ()
 },100)
+
+
