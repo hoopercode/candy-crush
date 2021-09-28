@@ -109,6 +109,7 @@ function moveDown() {
    } 
   }
 }
+
 //Checking for Matches
 //check for row of Three
 
