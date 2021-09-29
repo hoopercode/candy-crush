@@ -7,7 +7,7 @@
 Put everything you’ve learned in your first 3 weeks to the test by designing and building your own full functioning browser based game using HTML, CSS/SCSS and
 JavaScript.
 
-# My New Learning
+## My New Learning
 
 const square = document.createElement('div');
 
