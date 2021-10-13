@@ -32,7 +32,6 @@ function createBoard() {
     square.style.background = candyColors[randomColor]
     grid.appendChild(square) //Talk about this
     squares.push(square);
-    
   }
 }
 createBoard()
